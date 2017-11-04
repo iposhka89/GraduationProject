@@ -1,0 +1,39 @@
+<h2>Orders Table</h2>
+<table border="1">
+  <tr>
+    <th>Дата/время заказа</th>
+    <th>Имя заказчика</th>
+    <th>Заказ</th>
+    <th>Стоимость</th>
+    <th>Р-н доставки</th>
+    <th>Статус доставки</th>
+  </tr>
+  <tbody>
+    {{#each model as |order|}}
+      <tr class="order-info">
+        <td>
+          {{moment-format order.dateAndTime 'DD/MMM/YYYY HH:MM'}}
+        </td>
+        <td>
+          {{order.personName}}
+        </td>
+        <td>
+          {{#each order.order as |item|}}
+            {{item}}<br>
+          {{/each}}
+        </td>
+        <td>
+          {{#each order.price as |price|}}
+            {{price}}<br>
+          {{/each}}
+        </td>
+        <td>
+          {{order.deliveryDistrict}}
+        </td>
+        <td>
+          {{order.deliveryState}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
