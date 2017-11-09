@@ -4,31 +4,31 @@ export default Ember.Component.extend({
   commodities: [{
     id: 1,
     name: 'Барабаны',
-    price: '600'
+    price: 600
   }, {
     id: 2,
     name: 'Гитара',
-    price: '300'
+    price: 300
   }, {
     id: 3,
     name: 'Басс-гитара',
-    price: '250'
+    price: 250
   }, {
     id: 4,
     name: 'Синтезатор',
-    price: '350'
+    price: 350
   }, {
     id: 5,
     name: 'Чехол',
-    price: '50'
+    price: 50
   }, {
     id: 6,
     name: 'Тюнер',
-    price: '35'
+    price: 35
   }, {
     id: 7,
     name: 'Барабанные палочки',
-    price: '15'
+    price: 15
   }],
   districts: [{
     id: 1,
@@ -62,6 +62,7 @@ export default Ember.Component.extend({
     selectCommodity(value, item) {
       this.set('summaryPrice', `Цена: ${item.price}$`);
       this.set('model.item', value);
+      this.set('model.price', item.price);
     },
     selectDistrict(value) {
       this.set('model.deliveryDistrict', value);

@@ -5,5 +5,8 @@ export default Ember.Route.extend({
     return {
       order: this.get('store').createRecord('order')
     }
+  },
+  deactivate() {
+    this.modelFor('add').order.deleteRecord();
   }
 });
