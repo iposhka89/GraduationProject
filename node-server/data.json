@@ -4,30 +4,18 @@
       "id": 1,
       "dateAndTime": 1509786295188,
       "personName": "Василий Петров",
-      "order": [
-        "Гитара",
-        "Тюнер"
-      ],
-      "price": [
-        "300$",
-        "25$"
-      ],
-      "deliveryDistrict": "Уручье",
+      "item": "Гитара",
+      "price": 300,
+      "deliveryDistrict": "Фрунзенский",
       "deliveryState": "Ожидает доставки"
     },
     {
       "id": 2,
       "dateAndTime": 1509800548860,
       "personName": "Иван Иванов",
-      "order": [
-        "Барабанные палочки",
-        "Метроном"
-      ],
-      "price": [
-        "10$",
-        "40$"
-      ],
-      "deliveryDistrict": "Малиновка",
+      "item": "Барабанные палочки",
+      "price": 10,
+      "deliveryDistrict": "Центральный",
       "deliveryState": "Доставлено"
     }
   ]

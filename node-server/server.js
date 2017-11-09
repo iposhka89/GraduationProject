@@ -8,9 +8,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(morgan('common'));
 
-app.get('/api/orders', (req, res) => {
-   res.status(200).send(fs.readFileSync('data.json', 'utf8'));
-});
+require('./routes/orders.js')(app, fs);
 
 app.listen(9999, function () {
     console.log('Server has been started...');

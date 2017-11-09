@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-h2 {
+h3 {
   margin: 7px 0;
 }
 
@@ -13,4 +13,13 @@ table {
 
 th, td {
   padding: 4px 6px;
+}
+
+.form-group,
+.summary-price {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
 }
