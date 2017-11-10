@@ -1,4 +1,8 @@
-<h2>Orders Table</h2>
+{{#link-to "add"}}
+  Добавить заказ
+{{/link-to}}
+
+<h3>Таблица заказов</h3>
 <table border="1">
   <tr>
     <th>Дата/время заказа</th>
@@ -9,23 +13,19 @@
     <th>Статус доставки</th>
   </tr>
   <tbody>
-    {{#each model as |order|}}
+    {{#each model.list as |order|}}
       <tr class="order-info">
         <td>
-          {{moment-format order.dateAndTime 'DD/MMM/YYYY HH:MM'}}
+          {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
         </td>
         <td>
           {{order.personName}}
         </td>
         <td>
-          {{#each order.order as |item|}}
-            {{item}}<br>
-          {{/each}}
+          {{order.item}}
         </td>
         <td>
-          {{#each order.price as |price|}}
-            {{price}}<br>
-          {{/each}}
+          {{order.price}}$
         </td>
         <td>
           {{order.deliveryDistrict}}

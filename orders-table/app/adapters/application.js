@@ -1,5 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
-  host: 'http://localhost:9999/api'
+  host: 'http://localhost:9999',
+  namespace: 'api'
 });
