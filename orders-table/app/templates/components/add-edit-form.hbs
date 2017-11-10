@@ -1,16 +1,26 @@
 <form>
   <div class="form-group">
     <label>Имя заказчика</label>
-    {{input type="text" value=order.personName}}
+    {{input type="text" class="personName" value=order.personName}}
+    {{#if showError}}
+      <div class="error">
+        {{v-get order "personName" "message"}}
+      </div>
+    {{/if}}
   </div>
 
   <div class="form-group">
     <label>Заказ</label>
     {{x-select model=commodities labelKey="name" valueKey="name"
       onSelect=(action "selectCommodity") canSearch=false}}
+    {{#if showError}}
+      <div class="error">
+        {{v-get order "item" "message"}}
+      </div>
+    {{/if}}
   </div>
 
-  <div class="summary-price">
+  <div class="form-group">
     {{summaryPrice}}
   </div>
 
@@ -18,9 +28,14 @@
     <label>Район доставки</label>
     {{x-select model=districts labelKey="name" valueKey="name"
       onSelect=(action "selectDistrict") canSearch=false}}
+    {{#if showError}}
+      <div class="error">
+        {{v-get order "deliveryDistrict" "message"}}
+      </div>
+    {{/if}}
   </div>
 
   <div class="form-group">
-    <button type="button" {{action "addOrder"}}>Добавить</button>
+    <button type="button" {{action (mut showError) true}} {{action "addOrder"}}>Добавить</button>
   </div>
 </form>

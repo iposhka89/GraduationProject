@@ -15,11 +15,43 @@ th, td {
   padding: 4px 6px;
 }
 
-.form-group,
-.summary-price {
+.form-group {
   margin-bottom: 10px;
 }
 
 label {
   display: block;
+}
+
+input[type="text"].personName {
+  width: 200px;
+  padding: 6px 8px;
+}
+
+.es-control {
+  border-radius: 0;
+  border-color: #a9a9a9;
+  height: 30px;
+  padding: 5px 8px;
+  width: 220px;
+}
+
+.es-options {
+  width: 220px;
+  font-size: 14px;
+}
+
+.es-option {
+  padding: 5px 14px;
+}
+
+input[type="text"] {
+  height: 14px;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
 }
