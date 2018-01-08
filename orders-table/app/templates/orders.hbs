@@ -3,37 +3,46 @@
 {{/link-to}}
 
 <h3>Таблица заказов</h3>
-<table border="1">
-  <tr>
-    <th>Дата/время заказа</th>
-    <th>Имя заказчика</th>
-    <th>Заказ</th>
-    <th>Стоимость</th>
-    <th>Р-н доставки</th>
-    <th>Статус доставки</th>
-  </tr>
-  <tbody>
-    {{#each model.list as |order|}}
-      <tr class="order-info">
-        <td>
-          {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
-        </td>
-        <td>
-          {{order.personName}}
-        </td>
-        <td>
-          {{order.item}}
-        </td>
-        <td>
-          {{order.price}}$
-        </td>
-        <td>
-          {{order.deliveryDistrict}}
-        </td>
-        <td>
-          {{order.deliveryState}}
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+
+{{#if model.list.length}}
+  <table border="1">
+    <tr>
+      <th>Дата/время заказа</th>
+      <th>Имя заказчика</th>
+      <th>Заказ</th>
+      <th>Стоимость</th>
+      <th>Р-н доставки</th>
+      <th>Статус доставки</th>
+      <th></th>
+    </tr>
+    <tbody>
+      {{#each model.list as |order|}}
+        <tr class="order-info">
+          <td>
+            {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
+          </td>
+          <td>
+            {{order.personName}}
+          </td>
+          <td>
+            {{order.item}}
+          </td>
+          <td>
+            {{order.price}}$
+          </td>
+          <td>
+            {{order.deliveryDistrict}}
+          </td>
+          <td>
+            {{order.deliveryState}}
+          </td>
+          <td>
+            <button type="button" {{action "removeOrder" order}}>Удалить</button>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Список заказов пуст</p>
+{{/if}}
