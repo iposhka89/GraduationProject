@@ -13,5 +13,5 @@ export default DS.Model.extend(Validations, {
   item: DS.attr(),
   price: DS.attr(),
   deliveryDistrict: DS.attr(),
-  deliveryState: DS.attr()
+  isDelivered: DS.attr()
 });

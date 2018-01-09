@@ -14,7 +14,6 @@ export default Ember.Component.extend({
   ],
   actions: {
     selectCommodity(value, item) {
-      this.set('summaryPrice', `Цена: ${item.get('price')}$`);
       this.set('order.item', value);
       this.set('order.price', item.get('price'));
     },
@@ -22,6 +21,9 @@ export default Ember.Component.extend({
       this.set('order.deliveryDistrict', value);
     },
     addOrder() {
+      this.sendAction('actionToCall');
+    },
+    editOrder() {
       this.sendAction('actionToCall');
     }
   }

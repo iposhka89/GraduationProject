@@ -6,6 +6,10 @@ h3 {
   margin: 7px 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 table {
   border-collapse: collapse;
   text-align: left;

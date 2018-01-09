@@ -11,7 +11,7 @@
 
   <div class="form-group">
     <label>Заказ</label>
-    {{x-select model=commodities labelKey="name" valueKey="name"
+    {{x-select model=commodities labelKey="name" value=order.item valueKey="name"
       onSelect=(action "selectCommodity") canSearch=false}}
     {{#if showError}}
       <div class="error">
@@ -20,13 +20,15 @@
     {{/if}}
   </div>
 
-  <div class="form-group">
-    {{summaryPrice}}
-  </div>
+  {{#if order.price}}
+    <div class="form-group">
+      Цена: {{order.price}}$
+    </div>
+  {{/if}}
 
   <div class="form-group">
     <label>Район доставки</label>
-    {{x-select model=districts labelKey="name" valueKey="name"
+    {{x-select model=districts labelKey="name" value=order.deliveryDistrict valueKey="name"
       onSelect=(action "selectDistrict") canSearch=false}}
     {{#if showError}}
       <div class="error">
@@ -35,7 +37,18 @@
     {{/if}}
   </div>
 
-  <div class="form-group">
-    <button type="button" {{action (mut showError) true}} {{action "addOrder"}}>Добавить</button>
-  </div>
+  {{#if isEditMode}}
+    <div class="form-group">
+      <label>Доставлено</label>
+      {{input type="checkbox" checked=order.isDelivered}}
+    </div>
+
+    <div class="form-group">
+      <button type="button" {{action (mut showError) true}} {{action "editOrder"}}>Редактировать</button>
+    </div>
+  {{else}}
+    <div class="form-group">
+      <button type="button" {{action (mut showError) true}} {{action "addOrder"}}>Добавить</button>
+    </div>
+  {{/if}}
 </form>
