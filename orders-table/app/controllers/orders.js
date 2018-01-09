@@ -8,5 +8,6 @@ export default Ember.Controller.extend({
         order.destroyRecord();
       }
     }
-  }
+  },
+  queryParams: ['id']
 });

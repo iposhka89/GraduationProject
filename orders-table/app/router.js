@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('orders');
   this.route('add');
+  this.route('edit', {queryParams: 'id'});
 });
 
 export default Router;

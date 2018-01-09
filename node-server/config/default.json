@@ -1,0 +1,4 @@
+{
+  "jsonCommodities" : "./data/commodities.json",
+  "jsonOrders" : "./data/orders.json"
+}

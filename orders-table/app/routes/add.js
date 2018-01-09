@@ -8,6 +8,6 @@ export default Ember.Route.extend({
     }
   },
   deactivate() {
-    this.modelFor('add').order.deleteRecord();
+    this.store.unloadAll();
   }
 });

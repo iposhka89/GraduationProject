@@ -34,9 +34,16 @@
             {{order.deliveryDistrict}}
           </td>
           <td>
-            {{order.deliveryState}}
+            {{#if order.isDelivered}}
+              Доставлено
+            {{else}}
+              Ожидает доставки
+            {{/if}}
           </td>
           <td>
+            {{#link-to "edit" (query-params id=order.id)}}
+              <button type="button">Отредактировать</button>
+            {{/link-to}}
             <button type="button" {{action "removeOrder" order}}>Удалить</button>
           </td>
         </tr>
