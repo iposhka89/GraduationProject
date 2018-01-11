@@ -27,12 +27,6 @@ export default Ember.Controller.extend({
     });
   }),
   actions: {
-    removeOrder(order) {
-      const confirmRemoving = confirm('Вы уверены, что хотите удалить этот заказ?');
-      if (confirmRemoving) {
-        order.destroyRecord();
-      }
-    },
     sortOrders(sortBy) {
       this.set('sortBy', sortBy);
       this.set('sortDir', !this.get('sortDir'));
