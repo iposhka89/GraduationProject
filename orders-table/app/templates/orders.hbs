@@ -4,19 +4,23 @@
 
 <h3>Таблица заказов</h3>
 
-{{#if model.list.length}}
+<div class="form-group">
+  {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
+</div>
+
+{{#if filteredOrders.length}}
   <table border="1">
     <tr>
-      <th>Дата/время заказа</th>
-      <th>Имя заказчика</th>
-      <th>Заказ</th>
-      <th>Стоимость</th>
-      <th>Р-н доставки</th>
-      <th>Статус доставки</th>
+      <th {{action "sortOrders" "dateAndTime"}}>Дата/время заказа</th>
+      <th {{action "sortOrders" "personName"}}>Имя заказчика</th>
+      <th {{action "sortOrders" "item"}}>Заказ</th>
+      <th {{action "sortOrders" "price"}}>Стоимость</th>
+      <th {{action "sortOrders" "deliveryDistrict"}}>Р-н доставки</th>
+      <th {{action "sortOrders" "isDelivered"}}>Статус доставки</th>
       <th></th>
     </tr>
     <tbody>
-      {{#each model.list as |order|}}
+      {{#each filteredOrders as |order|}}
         <tr class="order-info">
           <td>
             {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
