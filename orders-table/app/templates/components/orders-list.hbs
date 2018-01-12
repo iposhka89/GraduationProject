@@ -1,4 +1,4 @@
-{{#if filteredOrders.length}}
+{{#if sortedOrders.length}}
   <table border="1">
     <tr>
       <th {{action "sortOrders" "dateAndTime"}}>Дата/время заказа</th>
@@ -10,7 +10,7 @@
       <th></th>
     </tr>
     <tbody>
-    {{#each filteredOrders as |order|}}
+    {{#each sortedOrders as |order|}}
       <tr class="order-info">
         <td>
           {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
