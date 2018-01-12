@@ -1,0 +1,49 @@
+{{#if sortedOrders.length}}
+  <table border="1">
+    <tr>
+      <th {{action "sortOrders" "dateAndTime"}}>Дата/время заказа</th>
+      <th {{action "sortOrders" "personName"}}>Имя заказчика</th>
+      <th {{action "sortOrders" "item"}}>Заказ</th>
+      <th {{action "sortOrders" "price"}}>Стоимость</th>
+      <th {{action "sortOrders" "deliveryDistrict"}}>Р-н доставки</th>
+      <th {{action "sortOrders" "isDelivered"}}>Статус доставки</th>
+      <th></th>
+    </tr>
+    <tbody>
+    {{#each sortedOrders as |order|}}
+      <tr class="order-info">
+        <td>
+          {{moment-format order.dateAndTime "DD/MMM/YYYY HH:mm"}}
+        </td>
+        <td>
+          {{order.personName}}
+        </td>
+        <td>
+          {{order.item}}
+        </td>
+        <td>
+          {{order.price}}$
+        </td>
+        <td>
+          {{order.deliveryDistrict}}
+        </td>
+        <td>
+          {{#if order.isDelivered}}
+            Доставлено
+          {{else}}
+            Ожидает доставки
+          {{/if}}
+        </td>
+        <td>
+          {{#link-to "edit" (query-params id=order.id)}}
+            <button type="button">Отредактировать</button>
+          {{/link-to}}
+          <button type="button" {{action "removeOrder" order}}>Удалить</button>
+        </td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>Список заказов пуст</p>
+{{/if}}
