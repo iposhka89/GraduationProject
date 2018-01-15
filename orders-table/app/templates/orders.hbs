@@ -1,6 +1,4 @@
-{{#link-to "add"}}
-  Добавить заказ
-{{/link-to}}
+<h3 {{action "openModal" "orders.add"}}>Добавить заказ</h3>
 
 <h3>Таблица заказов</h3>
 
@@ -9,3 +7,5 @@
 </div>
 
 {{orders-list filteredOrders=filteredOrders}}
+
+{{outlet}}

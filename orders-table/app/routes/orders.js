@@ -5,5 +5,10 @@ export default Ember.Route.extend({
     return {
       list: this.get('store').findAll('order')
     }
+  },
+  actions: {
+    openModal: function(modalName) {
+      this.transitionTo(modalName);
+    }
   }
 });
