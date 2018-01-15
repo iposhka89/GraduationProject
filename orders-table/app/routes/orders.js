@@ -9,6 +9,9 @@ export default Ember.Route.extend({
   actions: {
     openModal: function(modalName) {
       this.transitionTo(modalName);
+    },
+    willTransition() {
+      this.refresh();
     }
   }
 });
