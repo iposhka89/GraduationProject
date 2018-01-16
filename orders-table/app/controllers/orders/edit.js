@@ -12,5 +12,6 @@ export default Ember.Controller.extend({
         }
       })
     }
-  }
+  },
+  queryParams: ['id']
 });

@@ -20,11 +20,9 @@
     {{/if}}
   </div>
 
-  {{#if order.price}}
-    <div class="form-group">
-      Цена: {{order.price}}$
-    </div>
-  {{/if}}
+  <div class="form-group">
+    Цена:{{#if order.price}} {{order.price}}$ {{else}} 0{{/if}}
+  </div>
 
   <div class="form-group">
     <label>Район доставки</label>

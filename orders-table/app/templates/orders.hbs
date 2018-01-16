@@ -1,11 +1,15 @@
-<h3 {{action "openModal" "orders.add"}}>Добавить заказ</h3>
-
-<h3>Таблица заказов</h3>
-
-<div class="form-group">
-  {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
-</div>
-
-{{orders-list filteredOrders=filteredOrders}}
-
 {{outlet}}
+
+<div class="page-content">
+  {{#link-to "orders.add"}}
+    <button type="button">Добавить заказ</button>
+  {{/link-to}}
+
+  <h3>Таблица заказов</h3>
+
+  <div class="form-group">
+    {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
+  </div>
+
+  {{orders-list filteredOrders=filteredOrders}}
+</div>
