@@ -1,37 +1,51 @@
 [
   {
     "id": 1,
-    "name": "Барабаны",
-    "price": 600
+    "data": {
+      "commodityName": "Барабаны",
+      "commodityPrice": 600
+    }
   },
   {
     "id": 2,
-    "name": "Гитара",
-    "price": 300
+    "data": {
+      "commodityName": "Гитара",
+      "commodityPrice": 300
+    }
   },
   {
     "id": 3,
-    "name": "Басс-гитара",
-    "price": 250
+    "data": {
+      "commodityName": "Басс-гитара",
+      "commodityPrice": 250
+    }
   },
   {
     "id": 4,
-    "name": "Синтезатор",
-    "price": 350
+    "data": {
+      "commodityName": "Синтезатор",
+      "commodityPrice": 350
+    }
   },
   {
     "id": 5,
-    "name": "Чехол",
-    "price": 50
+    "data": {
+      "commodityName": "Чехол",
+      "commodityPrice": 50
+    }
   },
   {
     "id": 6,
-    "name": "Тюнер",
-    "price": 35
+    "data": {
+      "commodityName": "Тюнер",
+      "commodityPrice": 35
+    }
   },
   {
     "id": 7,
-    "name": "Барабанные палочки",
-    "price": 15
+    "data": {
+      "commodityName": "Барабанные палочки",
+      "commodityPrice": 15
+    }
   }
 ]
