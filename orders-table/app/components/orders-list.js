@@ -28,7 +28,7 @@ export default Ember.Component.extend({
       }
     },
     sortOrders(sortBy) {
-      this.sendAction('actionToCall', sortBy, !(this.get('sortDir') === 'true'));
+      this.sendAction('updateQueryParams', sortBy, !(this.get('sortDir') === 'true'));
     }
   }
 });

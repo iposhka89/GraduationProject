@@ -11,5 +11,5 @@
     {{input class="filter" type="text" autofocus=true value=filter placeholder="Отфильтровать по имени"}}
   </div>
 
-  {{orders-list filteredOrders=filteredOrders actionToCall="updateQueryParams" sortBy=sortBy sortDir=sortDir}}
+  {{orders-list filteredOrders=filteredOrders updateQueryParams="updateQueryParams" sortBy=sortBy sortDir=sortDir}}
 </div>
