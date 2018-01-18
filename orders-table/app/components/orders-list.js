@@ -1,16 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  sortBy: 'personName',
-  sortDir: true,
   sortedOrders: Ember.computed('filteredOrders.@each', 'sortBy', 'sortDir', function() {
     const sortBy = this.get('sortBy');
+    const sortDir = this.get('sortDir') === 'true';
 
     return this.get('filteredOrders').sort((a, b) => {
       let el1, el2;
 
-      el1 = this.get('sortDir') ? a.get(sortBy) : b.get(sortBy);
-      el2 = this.get('sortDir') ? b.get(sortBy) : a.get(sortBy);
+      el1 = sortDir ? a.get(sortBy) : b.get(sortBy);
+      el2 = sortDir ? b.get(sortBy) : a.get(sortBy);
 
       if (el1 < el2) {
         return -1;
@@ -29,8 +28,7 @@ export default Ember.Component.extend({
       }
     },
     sortOrders(sortBy) {
-      this.set('sortBy', sortBy);
-      this.set('sortDir', !this.get('sortDir'));
+      this.sendAction('updateQueryParams', sortBy, !(this.get('sortDir') === 'true'));
     }
   }
 });
