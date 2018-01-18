@@ -6,8 +6,5 @@ export default Ember.Route.extend({
       order: this.get('store').createRecord('order'),
       commodities: this.get('store').findAll('commodity')
     }
-  },
-  deactivate() {
-    this.store.unloadAll();
   }
 });

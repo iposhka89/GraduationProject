@@ -1,11 +1,15 @@
-{{#link-to "add"}}
-  Добавить заказ
-{{/link-to}}
+{{outlet}}
 
-<h3>Таблица заказов</h3>
+<div class="page-content">
+  {{#link-to "orders.add"}}
+    <button type="button">Добавить заказ</button>
+  {{/link-to}}
 
-<div class="form-group">
-  {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
+  <h3>Таблица заказов</h3>
+
+  <div class="form-group">
+    {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
+  </div>
+
+  {{orders-list filteredOrders=filteredOrders}}
 </div>
-
-{{orders-list filteredOrders=filteredOrders}}

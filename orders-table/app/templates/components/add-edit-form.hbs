@@ -20,11 +20,9 @@
     {{/if}}
   </div>
 
-  {{#if order.price}}
-    <div class="form-group">
-      Цена: {{order.price}}$
-    </div>
-  {{/if}}
+  <div class="form-group">
+    Цена:{{#if order.price}} {{order.price}}$ {{else}} 0{{/if}}
+  </div>
 
   <div class="form-group">
     <label>Район доставки</label>
@@ -42,13 +40,9 @@
       <label>Доставлено</label>
       {{input type="checkbox" checked=order.isDelivered}}
     </div>
-
-    <div class="form-group">
-      <button type="button" {{action (mut showError) true}} {{action "editOrder"}}>Редактировать</button>
-    </div>
-  {{else}}
-    <div class="form-group">
-      <button type="button" {{action (mut showError) true}} {{action "addOrder"}}>Добавить</button>
-    </div>
   {{/if}}
+
+  <div class="form-group">
+    <button type="button" {{action (mut showError) true}} {{action "saveOrder"}}>{{#if isEditMode}}Редактировать{{else}}Добавить{{/if}}</button>
+  </div>
 </form>

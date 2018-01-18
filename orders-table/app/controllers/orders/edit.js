@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    addOrder() {
+    editOrder() {
       const order = this.get('model.order');
       order.validate().then(({ validations }) => {
         if (validations.get('isValid')) {
@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
           });
         }
       })
+    },
+    closeModal() {
+      this.transitionToRoute('orders');
     }
   }
 });

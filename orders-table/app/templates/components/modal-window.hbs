@@ -1,0 +1,7 @@
+<div class="modal-layer">
+  <div class="modal">
+    <button class="modal-close" type="button" {{action "closeModal"}}>X</button>
+    <h3 class="modal-title">{{#if isEditMode}}Редактировать{{else}}Добавить{{/if}} заказ</h3>
+    {{add-edit-form order=order commodities=commodities isEditMode=isEditMode saveOrder="saveOrder"}}
+  </div>
+</div>
