@@ -8,8 +8,8 @@
   <h3>Таблица заказов</h3>
 
   <div class="form-group">
-    {{input class="filter" type="text" autofocus=true value=text placeholder="Отфильтровать по имени"}}
+    {{input class="filter" type="text" autofocus=true value=filter placeholder="Отфильтровать по имени"}}
   </div>
 
-  {{orders-list filteredOrders=filteredOrders}}
+  {{orders-list filteredOrders=filteredOrders actionToCall="updateQueryParams" sortBy=sortBy sortDir=sortDir}}
 </div>
