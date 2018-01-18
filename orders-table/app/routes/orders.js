@@ -9,9 +9,6 @@ export default Ember.Route.extend({
   actions: {
     willTransition() {
       this.refresh();
-    },
-    closeModal() {
-      this.transitionTo('orders');
     }
   }
 });

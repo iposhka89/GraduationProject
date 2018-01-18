@@ -11,6 +11,9 @@ export default Ember.Controller.extend({
           });
         }
       })
+    },
+    closeModal() {
+      this.transitionToRoute('orders');
     }
   }
 });

@@ -20,11 +20,8 @@ export default Ember.Component.extend({
     selectDistrict(value) {
       this.set('order.deliveryDistrict', value);
     },
-    addOrder() {
-      this.sendAction('actionToCall');
-    },
-    editOrder() {
-      this.sendAction('actionToCall');
+    saveOrder() {
+      this.sendAction('saveOrder');
     }
   }
 });
