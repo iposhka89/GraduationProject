@@ -35,7 +35,7 @@
           {{/if}}
         </td>
         <td>
-          {{#link-to "orders.edit" (query-params id=order.id)}}
+          {{#link-to "orders.edit" order.id}}
             <button type="button">Отредактировать</button>
           {{/link-to}}
           <button type="button" {{action "removeOrder" order}}>Удалить</button>
