@@ -4,7 +4,7 @@ import RSVP from 'rsvp';
 export default Ember.Route.extend({
   model(params) {
     return RSVP.hash({
-      order: this.get('store').findRecord('order', params.order_id),
+      order: this.get('store').findRecord('order', params.orderId),
       commodities: this.get('store').findAll('commodity')
     })
   },
